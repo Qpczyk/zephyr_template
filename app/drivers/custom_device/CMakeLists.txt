@@ -1,0 +1,1 @@
+zephyr_library_sources_ifdef(CONFIG_CUSTOM_DEVICE custom_device.c)

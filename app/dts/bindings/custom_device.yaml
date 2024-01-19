@@ -1,0 +1,11 @@
+description: Custom device
+
+compatible: "custom_device"
+
+include: base.yaml
+
+properties:
+    device-gpios:
+      type: phandle-array
+      required: true
+      description: Pin to be controlled.

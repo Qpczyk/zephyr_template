@@ -1,0 +1,5 @@
+menu "Project options"
+
+rsource "drivers/Kconfig"
+
+endmenu

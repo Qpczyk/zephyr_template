@@ -1,0 +1,13 @@
+
+config CUSTOM_DEVICE
+	bool "Enable custom driver"
+	depends on GPIO
+	help
+	  Sources will be included in cmake if set to true.
+
+config CUSTOM_DEVICE_INIT_PRIORITY
+	int "Init priority"
+	depends on CUSTOM_DEVICE
+	default 70
+	help
+	  Sets Init priority, must be higher than gpio driver

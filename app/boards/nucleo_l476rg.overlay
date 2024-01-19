@@ -1,0 +1,52 @@
+/ {
+	custom_device {
+		compatible = "custom_device";
+		status = "okay";
+		device-gpios = <&gpioa 1 GPIO_ACTIVE_HIGH>;
+	};
+};
+
+&i2c3 {
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_FAST>;
+
+	ina219: ina219@40 {
+		status = "okay";
+		compatible = "ti,ina219";
+		reg = <0x40>;
+		brng = <0>;
+		pg = <0>;
+		sadc = <13>;
+		badc = <13>;
+		shunt-milliohm = <100>;
+		lsb-microamp = <10>;
+	};
+};
+
+&clk_msi {
+	status = "okay";
+	msi-range = <11>;
+	msi-pll-mode;
+};
+
+&spi1 {
+        status = "okay";
+        cs-gpios = <&gpiob 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+	display: display@1 {
+		status = "okay";
+		compatible = "solomon,ssd1306fb", "solomon,ssd1306fb-spi";
+		reg = <0x01>;
+		spi-max-frequency = <100000>;
+		segment-offset = <0>;
+		page-offset = <0>;
+		display-offset = <0>;
+		multiplex-ratio = <0>;
+
+		prechargep = <1>;
+		height = <64>;
+		width = <128>;
+		reset-gpios = <&gpiob 10 GPIO_ACTIVE_HIGH>;
+		data_cmd-gpios = <&gpioa 8 GPIO_ACTIVE_HIGH>;
+	};
+};
