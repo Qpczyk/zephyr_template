@@ -17,11 +17,11 @@ int main(void)
         }
 
 	while (1) {
-                pm_device_action_run(dev, PM_DEVICE_ACTION_RESUME);
+                pm_device_action_run(dev, PM_DEVICE_ACTION_TURN_ON);
 		k_sleep(K_MSEC(1000));
                 pm_device_action_run(dev, PM_DEVICE_ACTION_TURN_OFF);
                 k_sleep(K_MSEC(1000));
 
-		LOG_INF("1s passed");
+		LOG_INF("One cycle passed");
 	}
 }
