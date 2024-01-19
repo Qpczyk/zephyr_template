@@ -1,3 +1,10 @@
+# Modules
+/build
+/zephyr
+/modules
+.west
+.vscode
+
 # Prerequisites
 *.d
 
