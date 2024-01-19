@@ -22,7 +22,9 @@ Install UDEV rules so board can be flashed:
 
 Clone project and its dependencies:
 ```
-  $ west init -m git@github.com:Qpczyk/zephyr_template.git
+  $ git clone git@github.com:Qpczyk/zephyr_template.git
+  $ cd zephyr_template
+  $ west init -l app
   $ west update
 ```
 Build application:
